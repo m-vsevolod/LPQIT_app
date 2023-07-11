@@ -4,8 +4,10 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QDesktopWidget, QPushButt
 from PyQt5.QtCore import Qt
 
 from spd_counter import spd_counter
+from standa_spinner import standa_spinner
 
 class MenuWindow(QMainWindow):
+    
     def __init__(self):
 
         super().__init__()
@@ -22,8 +24,12 @@ class MenuWindow(QMainWindow):
         self.spd_counter_btn = QPushButton('SPD counter')
         self.spd_counter_btn.clicked.connect(self.open_spd_counter)
         
+        self.standa_spinner_btn = QPushButton('Standa spinner')
+        self.standa_spinner_btn.clicked.connect(self.open_standa_spinner)
+
         layout = QHBoxLayout()
         layout.addWidget(self.spd_counter_btn)
+        layout.addWidget(self.standa_spinner_btn)
 
         central = QWidget()
         central.setLayout(layout)
@@ -34,6 +40,11 @@ class MenuWindow(QMainWindow):
         self.close()
         self.spd_counter = spd_counter(self)
         self.spd_counter.show()
+
+    def open_standa_spinner(self):
+        self.close()
+        self.standa_spinner = standa_spinner(self)
+        self.standa_spinner.show()
 
 if __name__ == '__main__':
     app = QApplication(argv)

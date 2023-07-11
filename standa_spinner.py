@@ -1,11 +1,11 @@
 from PyQt5.QtWidgets import QWidget, QPushButton
 
-class spd_counter(QWidget):
+class standa_spinner(QWidget):
     
     def __init__(self, menu):
         super().__init__()
         self.menu = menu
-        self.title = 'SPD counter | Лаборатория физики квантовых информационных технологий'
+        self.title = 'Standa spinner | Лаборатория физики квантовых информационных технологий'
         self.initUI()
 
     def back_to_menu(self):
