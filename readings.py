@@ -56,10 +56,8 @@ def turn_curtain(curtain_device, angle, TEST = False, comments=False):
     else:
         try:
             command = str(angle)
-            sleep(1)
             if comments : print(f"The curtain turned at an {angle}")
             curtain_device.write(command.encode('utf-8'))
-            sleep(1)
         except Exception as e:
             if comments : print("Curtain failed to turn. Error :" + str(e))
             return None
