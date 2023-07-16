@@ -12,4 +12,4 @@ class connection_display():
         self.setWindowTitle(self.title)
 
         self.connect_maestro_btn = QPushButton('Connect Maestro Powermeter')
-        # self.connect_maestro_btn.label = 
+        
